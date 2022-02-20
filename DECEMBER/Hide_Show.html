@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Hide Show</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="shadow-lg mt-5 bg-warning rounded p-5">
+            <p class="Hello text-danger">Agar Ap Hide button par click kare ge to paragraph hide ho jye ga or show button par click kare ge to show ho jye ga.</p>
+            <button id="Hide" class="btn-block btn btn-success">Hide</button>
+            <button id="Show" class="btn-block btn btn-success">Show</button>
+        </div>
+        <div class="shadow-lg mt-5 p-5 rounded bg-secondary">
+            <p class="Fade text-light">Agar ap Hide wale button par click kar ge to paragraph style or 1 sec bad hide ho jye ga.</p>
+            <button id="Home" class="btn-block btn btn-warning text-light">Hide</button>
+        </div>
+        <div class="shadow-lg mt-5 p-5 rounded bg-info">
+            <p class="Fahad text-white">Agar ap button ko click kare ge to wo hide bhi kare ga or show bhi kare ga.</p>
+            <button id="p1" class="btn-block btn btn-danger">Hide/Show</button>
+        </div>
+        <div class="shadow-lg mt-5 p-5 rounded bg-dark">
+            <p class="text-danger">Agar ap fade wale button par click kare ge to ye style se color box show ho ge.</p>
+            <button id="b1" class="btn-block btn btn-primary">Fade</button>
+            <div id="Div1" style="margin-top: 10px; display: none; width: 150px; height: 200px; background-color: red;"></div>
+            <div id="Div2" style="margin-top: 10px; display: none; width: 150px; height: 200px; background-color: blue;"></div>
+            <div id="Div3" style="margin-top: 10px; display: none; width: 150px; height: 200px; background-color: pink;"></div>
+        </div>
+        <div class="shadow-lg mt-5 p-5 rounded bg-warning">
+            <p class="text-info">Agar ap fade wale button par click kare ge to ye style se color box hide ho ge.</p>
+            <button id="b2" class="btn-block btn btn-primary">Fade</button>
+            <div id="Div11" style="margin-top: 10px; width: 150px; height: 200px; background-color: red;"></div>
+            <div id="Div22" style="margin-top: 10px; width: 150px; height: 200px; background-color: blue;"></div>
+            <div id="Div33" style="margin-top: 10px; width: 150px; height: 200px; background-color: pink;"></div>
+        </div>
+        <div class="shadow-lg mt-5 p-5 rounded bg-success">
+            <p class="text-light">Agar ap fade wale button par click kare ge to ye style se color box ko hide or show kare ge.</p>
+            <button id="b3" class="btn-block btn btn-primary">Fade</button>
+            <div id="Div111" style="margin-top: 10px; width: 150px; height: 200px; background-color: red;"></div>
+            <div id="Div222" style="margin-top: 10px; width: 150px; height: 200px; background-color: blue;"></div>
+            <div id="Div333" style="margin-top: 10px; width: 150px; height: 200px; background-color: pink;"></div>
+        </div>
+        <div class="shadow-lg mt-5 p-5 rounded bg-info">
+            <p class="text-light">Agar ap fade wale button par click kare ge to ye style se in ki opacity kam kar de ga.</p>
+            <button id="b4" class="btn-block btn btn-primary">Fade</button>
+            <div id="Div1111" style="margin-top: 10px; width: 150px; height: 200px; background-color: red;"></div>
+            <div id="Div2222" style="margin-top: 10px; width: 150px; height: 200px; background-color: blue;"></div>
+            <div id="Div3333" style="margin-top: 10px; width: 150px; height: 200px; background-color: pink;"></div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#Hide").click(function(){
+                $(".Hello").hide();
+            });
+            $("#Show").click(function(){
+                $(".Hello").show();
+            });
+            $("#Home").click(function(){
+                $(".Fade").hide(1000); 
+            });
+            $("#p1").click(function(){
+                $(".Fahad").toggle();
+            });
+            $("#b1").click(function(){
+                $("#Div1").fadeIn();
+                $("#Div2").fadeIn("slow");
+                $("#Div3").fadeIn(3000);
+            });
+            $("#b2").click(function(){
+                $("#Div11").fadeOut();
+                $("#Div22").fadeOut("slow");
+                $("#Div33").fadeOut(3000);
+            });
+            $("#b3").click(function(){
+                $("#Div111").fadeToggle();
+                $("#Div222").fadeToggle("slow");
+                $("#Div333").fadeToggle(3000);
+            });
+            $("#b4").click(function(){
+                $("#Div1111").fadeTo("slow" , 0.15);
+                $("#Div2222").fadeTo("slow" , 0.4);
+                $("#Div3333").fadeTo("slow" , 0.7);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove and Dimensions</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        #div4{
+            padding: 10px;
+            margin-top: 50px;
+            background-color: aqua;
+            height: 300px;
+            width: 400px;
+            margin-left: 70px;
+            box-shadow: 0px 8px 16px 0px red;
+        }
+        #btn4{
+            margin-left: 70px;
+        }
+        #div5{
+            padding: 10px;
+            margin-top: 50px;
+            background-color: aqua;
+            height: 300px;
+            width: 400px;
+            box-shadow: 0px 8px 16px 0px red;
+        }
+        #div6{
+            padding: 10px;
+            margin-top: 50px;
+            background-color: aqua;
+            height: 300px;
+            margin-right: 145px;
+            margin-left: 70px;
+            box-shadow: 0px 8px 16px 0px red;
+        }
+        #btn6{
+            margin-left: 70px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Remove and Empty</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="div1">
+                    <div class="bg-light p-3 shadow-lg mt-5">
+                        <ins>My name is Fahad Khalid</ins><br>
+                        <ins>I am the student of first year</ins><br><br>
+                        <button id="btn1" class="btn btn-primary">Empty</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="div2">
+                    <div class="bg-light p-3 shadow-lg mt-5">
+                        <ins>My name is Fahad Khalid</ins><br>
+                        <ins>I am the student of first year</ins><br><br>
+                        <button id="btn2" class="btn btn-primary">Remove</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="div3">
+                    <div class="bg-light p-3 shadow-lg mt-5">
+                        <p id="p1">My name is Fahad Khalid</p>
+                        <p id="p2">I am the student of first year</p>
+                        <button id="btn3" class="btn btn-success">Remove</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-center mt-5">Dimensions</h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="div4"></div><br>
+                        <button id="btn4" class="btn btn-primary btn-lg">Dimension of Div</button>
+                </div>
+                <div class="col-md-6">
+                    <div id="div5"></div><br>
+                        <button id="btn5" class="btn btn-primary btn-lg">Dimension of Div</button>
+                </div>
+                <div class="col-md-12">
+                    <div id="div6"></div><br>
+                        <button id="btn6" class="btn btn-primary btn-lg">Dimension of Div</button>
+                </div>
+            </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#div1").empty()
+            });
+            $("#btn2").click(function(){
+                $("#div2").remove()
+            });
+            $("#btn3").click(function(){
+                $("p").remove("#p1 , #p2");
+            });
+            $("#btn4").click(function(){
+                var txt = "";
+                txt += "Width of div: " + $("#div4").width()+"</br>";
+                txt += "Height of div: " + $("#div4").height();
+                $("#div4").html(txt);
+            });
+            $("#btn5").click(function(){
+                var txt = "";
+                txt += "Width of div: " + $("#div5").width()+"</br>";
+                txt += "Height of div: " + $("#div5").height()+"</br>";
+                txt += "Inner Width of div: " + $("#div5").innerWidth()+"</br>";
+                txt += "Inner Height of div: " + $("#div5").innerHeight()+"</br>"
+                $("#div5").html(txt);
+            });
+            $("#btn6").click(function(){
+                var txt = "";
+                txt += "Width of div: " + $("#div6").width()+"</br>";
+                txt += "Height of div: " + $("#div6").height()+"</br>";
+                txt +="Outer Width of div: " + $("#div6").outerWidth()+"</br>";
+                txt +="Outer Height of div: " + $("#Div6").outerHeight()+"</br>";
+                $("#div6").html(txt);
+            });
+        });
+    </script>
+</body>
+</html>

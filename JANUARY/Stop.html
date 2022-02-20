@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Home work</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        #div2{
+            padding: 50px;
+            display: none;
+        }
+        #div1,#div2{
+            padding: 5px;
+            font-size: 18px;
+            text-align: center;
+            background-color: aquamarine;
+            color: black;
+            border: groove 3px cadetblue;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="btn1" class="mt-4 btn btn-danger">Stop Sliding</button>
+        <div class="mt-5" id="div1">Press me to having a slide.</div>
+        <div style="padding: 60px;" id="div2">Hello world!</div>
+        <button id="btn2" class="mt-4 btn btn-success">Hide</button>
+        <p id="p1">If you click the paragraph the paragraph will be hide and show the alert.</p>
+        <button id="btn3" class="mt-4 btn btn-primary">Hide</button>
+        <p id="p2">If you click the paragraph the paragraph will be hide and show the alert.</p>
+        <button id="btn4" class="btn btn-warning">Press the button</button>
+        <p id="p3">Jquery is doing animate</p>
+        <button id="btn5" class="btn btn-info">Press the button</button>
+        <p id="p4">Jquery is doing animate</p>
+        <p id="p5" class="mt-5">This is paragraph and <i>Italic</i> word.</p>
+        <button id="btn6" class="btn btn-secondary">Show text</button>
+        <button id="btn7" class="btn btn-success">Show HTML</button>
+        <p>Name: <input type="text" id="test" class="form-control" value="Fahad Khalid"></p>
+        <button id="btn8" class="btn btn-info">Show vlaue</button>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#div1").click(function(){
+                $("#div2").slideDown(5000);
+            });
+            $("#btn1").click(function(){
+                $("#div2").stop();
+            });
+            $("#btn2").click(function(){
+                $("#p1").hide("slow" , function(){
+                    alert("this paragraph is now hidden");
+                });
+            });
+            $("#btn3").click(function(){
+                $("#p2").hide(1000);
+                alert("This paragraph is hide");
+            });
+            $("#btn4").click(function(){
+                $("#p3").css("color" , "green").slideUp(2000).slideDown(2000);
+            });
+            $("#btn5").click(function(){
+                $("#p4").css("color" , "green")
+                .slideUp(2000)
+                .slideDown(2000);
+            });
+            $("#btn6").click(function(){
+                alert("text: " + $ ("#p5").text());
+            });
+            $("#btn7").click(function(){
+                alert("HTML: " + $("#p5").html());
+            });
+            $("#btn8").click(function(){
+                alert("Value: " + $("#test").val());
+            });
+        });
+    </script>
+</body>
+</html>

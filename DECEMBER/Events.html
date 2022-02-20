@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>JQUERY EVENTS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+       <div style="height: 312px;" class="mt-5 shadow-lg card">
+           <div class="text-info card-header">
+               <h3>Press Paraghraph To hide them</h3>
+           </div>
+           <div class="text-success card-body">
+               <p class="pa">My Name is fahad.</p>
+               <p class="pa">I am the student of First Year.</p>
+               <p class="pa">Today I am doing jquery home work.</p>
+           </div>
+           <div class="card-footer">
+                <i class="text-secondary">Agar ap in paragraph par single click kare ge to ye invisible ho jye ge.</i>
+           </div>
+       </div>
+    </div>
+    <div class="col-md-6">
+       <div class="mt-5 shadow-lg card">
+        <div class="text-info card-header">
+            <h3>Press Paraghraph on double time To hide them</h3>
+        </div>
+        <div class="text-success card-body">
+            <p class="s">My Name is fahad.</p>
+            <p class="s">I am the student of First Year.</p>
+            <p class="s">Today I am doing jquery home work.</p>
+        </div>
+        <div class="card-footer">
+            <i class="text-secondary">Agar ap in Paragraph par double click kare ge to ye invisible ho jye ge.</i>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="mt-5 shadow-lg card">
+        <div class="text-info card-header">
+            <h3>Cursor on Paragraph</h3>
+        </div>
+        <div class="text-success card-body">
+            <p id="p1">Enter this Paragraph 1</p>
+        </div>
+        <div class="card-footer">
+            <i class="text-secondary">Agar ap apna cursor paragraph pe le k jye ge to ye ap ko ek notification de ga.</i>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="mt-5 shadow-lg card">
+        <div class="text-info card-header">
+            <h3>Cursor Up on Paragraph</h3>
+        </div>
+        <div class="text-success card-body">
+            <p id="p2">Enter this Paragraph 2</p>
+        </div>
+        <div class="card-footer">
+            <i class="text-secondary">Agar ap apna cursor paragraph ke uper le jye ge or mouse ke kisi bhi button ko dabye ge to ye ek notification de ga.</i>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="mt-5 shadow-lg card">
+        <div class="text-info card-header">
+            <h3>Label And input</h3>
+        </div>
+        <div class="text-success card-body">
+            <label for="name">Name</label>
+            <input type="text">
+            <label for="name">E-mail</label>
+            <input type="text">
+        </div>
+        <div class="card-footer">
+            <i class="text-secondary">Agar ap apna cusrsor input pe le ke jye ge or kisi bhi button ko click kare ge to ye us input ka color change karde ga.</i>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="mt-5 card">
+        <div class="text-info card-header">
+            <h3>Leave Cursor on Paragraph</h3>
+        </div>
+        <div class="text-success card-body">
+            <p id="p3">Enter this Paragraph 3</p>
+        </div>
+        <div class="card-footer">
+            <i class="text-secondary">Agar ap apna cursor paragraph se hata ye ge to ye ap ko ek notification de ga.</i>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div style="height: 300px;" class="mt-5 card">
+        <div class="text-info card-header">
+            <h3>Cursor down on Paragraph</h3>
+        </div>
+        <div class="mt-4 text-success card-body">
+            <h3 id="h3">Enter this heading 3</h3>
+        </div>
+        <div class="card-footer">
+            <i class="text-secondary">Agar ap apna cursor heading ke niche le k jye ge or apne mouse ke kisi bhi button ko click kare ge to ye ek notification de ga.</i>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="mt-5 card">
+        <div class="card-header text-info">
+            <h3>Multiple event Methods</h3>
+        </div>
+        <div class="text-success card-body">
+                <h4>Click or move the mouse pointer over this paragraph.</h4>
+            </div>
+            <div class="card-footer">
+                <i class="text-secondary">Agar ap apna cursor heading pe le ke jye ge to ye iska color change karde ga , jab ap apna cursor hataye ge to color pechle wale se alag ho jye ga or jab ap apna cursor heading pe le ke jye ge or click kar k rakhe ge to iska color pechle wale se diffrent ho jye ga.</i>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".pa").click(function(){
+                $(this).hide();
+            });
+            $(".s").dblclick(function(){
+                $(this).hide();
+            });
+            $("#p1").mouseenter(function(){
+                alert("You Enterd p1!")
+            });
+            $("#p3").mouseleave(function(){
+                alert("You Enterd p3!")
+            });
+            $("#h3").mousedown(function(){
+                alert("You Enterd h3!")
+            })
+            $("#p2").mouseup(function(){
+                alert("Your cursor is up on p2!")
+            });
+            $("input").focus(function(){
+            $(this).css("background-color","pink");
+            });
+            $("input").blur(function(){
+            $(this).css("background-color","red");
+            });
+            $("h4").on({
+            mouseenter: function(){
+                $(this).css("background-color","lightgray");                
+            },
+            mouseleave: function(){
+                $(this).css("background-color","lightblue");                
+            },
+             click: function(){
+                $(this).css("background-color","lightgreen");                
+            },
+        });
+        });
+    </script>
+</body>
+</html>

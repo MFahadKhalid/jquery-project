@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add of Jquery</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body style="background-color: aquamarine">
+    <div class="p-4" style="margin-left: 550px; margin-top: 50px; margin-right: 550px; border: 20px groove blue; background: rgba(141, 36, 36, 0.583);">
+    <div class="container">
+        <h1 class="mb-4 text-warning">jQuery Add.</h1>
+    <ol class="text-light" id="paragraph1">
+        <li>Milk</li>
+        <li>Choclate</li>
+        <li>Bread</li>
+        <li>Peanut</li>
+    </ol>
+    <button id="Append" class="btn btn-danger " >Append Text</button>
+    <ul class="mt-5 text-light" id="paragraph2">
+        <li>Milk</li>
+        <li>Choclate</li>
+        <li>Bread</li>
+        <li>Peanut</li>
+    </ul>
+    <button id="prepend" class="btn btn-primary">prepend Text</button><br><br>
+    <p id="p1" class="text-light">This is a paragraph1</p>
+    <button id="btn1" class="btn btn-info">Before</button>
+    <p id="p2" class="text-light">This is a paragraph2</p>
+    <button id="btn2" class="btn btn-secondary">After</button>
+    <script src="assets/js/jquery.min.js"></script>
+    </div>
+</div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#Append").click(function(){
+                $("#paragraph1").append("<li>Jam</li>");
+            });
+            $("#btn1").click(function(){
+                $("#p1").before("<i>Hello world</i>")
+            });
+            $("#btn2").click(function(){
+                $("#p2").after("<ins>Hello world</ins>")
+            });
+            $("#prepend").click(function(){
+                $("#paragraph2").prepend("<li>Coconut</li>");
+            }); 
+        });
+    </script>
+</body>

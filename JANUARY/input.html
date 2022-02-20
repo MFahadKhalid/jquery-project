@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery input</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head> 
+<body style="background-color: pink;">
+    <div class="container">
+        <div class="mt-5">
+            <div class="input-group md-3">
+                <input id="input1" type="text" class="form-control" value="2">
+                <input id="input1" type="text" class="form-control" value="2">
+            </div>
+            <input id="input2" type="text" class="mt-3 form-control">
+            <div class="row">
+                <div class="col-md-3">
+                    <button id="btn1" class="mt-3 btn btn-info btn-block">+</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn2" class="mt-3 btn btn-success btn-block">-</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn3" class="mt-3 btn btn-danger btn-block">*</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn4" class="mt-3 btn btn-secondary btn-block">/</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#input2").val("4");
+            });
+            $("#btn2").click(function(){
+                $("#input2").val("0");
+            });
+            $("#btn3").click(function(){
+                $("#input2").val("4");
+            });
+            $("#btn4").click(function(){
+                $("#input2").val("1");
+            });
+        });
+    </script>
+</body>
+</html>

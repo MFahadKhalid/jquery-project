@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery calculator</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head> 
+<body style="background-color: wheat;">
+    <div class="container">
+        <div style="margin-left: 270px;" class="col-md-5">
+        <div class="rounded mt-5 p-5 bg-dark">
+            <p id="result" type="text" class="p-5 form-control">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="value1">
+                    <input type="text" class="form-control" id="symbol">
+                    <input type="text" class="form-control" id="value2">
+                </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <button id="btn5" class="btn mt-5 p-4 btn-light">7</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn6" class="btn mt-5 p-4 btn-light">8</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn7" class="btn mt-5 p-4 btn-light">9</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn" id="btn4" class="btn mt-5 p-4 btn-light" value="/">/</button>
+                </div><br>
+                <div class="col-md-3">
+                    <button id="btn8" class="btn mt-5 p-4 btn-light">4</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn9" class="btn mt-5 p-4 btn-light">5</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn10" class="btn mt-5 p-4 btn-light">6</button>
+                </div>
+                <div class="col-md-3">
+                    <button  id="btnMultiply" class="btn mt-5 p-4 btn-light" value="*">*</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn11" class="btn mt-5 p-4 btn-light">1</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn2" class="btn mt-5 p-4 btn-light" value="2">2</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn13" class="btn mt-5 p-4 btn-light">3</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn2" class="btn mt-5 p-4 btn-light"  value="-">-</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn14" class="btn mt-5 p-4 btn-light">.</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn0" class="btn mt-5 p-4 btn-light" value="0">0</button>
+                </div>
+                <div class="col-md-3">
+                    <button id="btn1" class="btn mt-5 p-4 btn-light"  value="+">+</button>
+                </div>
+                <div class="col-md-3">
+                    <button style="background-color: orangered; color: white;" class="btn mt-5 p-4 btn-light" id="clearAll">c</button>
+                </div>
+                <div>
+                    <button style="background-color: orange; color: white;" class="btn btn-block mt-5 p-3 btn-light" id="equalTo">=</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#equalTo").click(function(){
+                var value1 = $("#value1").val();
+                var value2 = $("#value2").val();
+                var symbol = $("#symbol").val();
+                if(symbol == "*"){
+                    var result = parseInt(value1) * parseInt(value2);
+                    $("#result").html(result);
+                }
+                else if(symbol == "+"){
+                    var result = parseInt(value1) + parseInt(value2);
+                    $("#result").html(result);
+                }
+                else if(symbol == "/"){
+                    var result = parseInt(value1) / parseInt(value2);
+                    $("#result").html(result);
+                }
+                else if(symbol == "-"){
+                    var result = parseInt(value1) - parseInt(value2);
+                    $("#result").html(result);
+                }
+            });
+            $("#clearAll").click(function(){
+                 $("#value1").val("");
+                 $("#value2").val("");
+                 $("#symbol").val("");
+                 $("#result").html(0);
+            });
+        });
+    </script>
+</body>
+</html>

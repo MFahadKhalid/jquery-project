@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Animation and Stop</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+</head>
+<body style="background-color: lightblue;height: 1500px;">
+    <div class="container ">
+        <h1 class="text-center text-danger">Jquery All Animations !</h1>
+        <button id="btn1" class="mt-5 btn btn-success">Start Animation</button>
+        <button class="btn1 mt-5 btn btn-success">Stop Animation</button>
+        <p>When you press the button it will begain margin-left.</p>
+        <div class="bg-success rounded-circle" id="div1" style="margin-top: 30px; height: 100px; width: 100px; position: absolute;"></div>
+        <button id="btn2" class="btn btn-primary" style="margin-top: 150px;">Start Animation opacity</button>
+        <button class="btn2 btn btn-primary" style="margin-top: 150px;">Stop Animation opacity</button>
+        <p>When you press the button it will begain margin-left , opacity , height and width.</p>
+        <div class="bg-primary rounded-circle" id="div2" style="margin-top: 30px; height: 100px; width: 100px; position: absolute;"></div>
+        <button id="btn3" class="btn btn-warning text-light" style="margin-top: 150px;">Start Animation heigth and width</button>
+        <button class="btn3 btn btn-warning text-light" style="margin-top: 150px;">Stop Animation heigth and width</button>
+        <p>When you press the button it will begain margin-left , opacity , dbl height and width.</p>
+        <div class="bg-warning rounded-circle" id="div3" style="margin-top: 30px; height: 100px; width: 100px; position: absolute;"></div>
+        <button id="btn4" class="btn btn-info" style="margin-top: 150px;">Start Animation toggle</button>
+        <button class="btn4 btn btn-info" style="margin-top: 150px;">Stop Animation toggle</button>
+        <p>When you press the button it will begain toggle.</p>
+        <div class="bg-info rounded-circle" id="div4" style="margin-top: 30px; height: 100px; width: 100px; position: absolute;"></div>
+        <button id="btn5" class="btn btn-danger" style="margin-top: 150px;">Start Animation</button>
+        <button class="btn5 btn btn-danger" style="margin-top: 150px;">Stop Animation</button>
+        <p>When you press the button it will begain margin-left , opacity , height and width.</p>
+        <div class="bg-danger rounded-circle" id="div5" style="margin-top: 30px; height: 100px; width: 100px; position: absolute;"></div>
+        <button id="btn6" class="btn btn-secondary" style="margin-top: 150px;">Start Animation with alphabet</button>
+        <button class="btn6 btn btn-secondary" style="margin-top: 150px;">Stop Animation with alphabet</button>
+        <p>When you press the button it will begain margin-left , opacity , height and width.</p>
+        <div class="bg-secondary text-light p-1 rounded" id="div6" style="margin-top: 30px; height: 100px; width: 170px; position: absolute;">Fahad</div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                $('#div1').animate({ left : '300px'});
+            });
+            $(".btn1").click(function(){
+                $("#div1").stop();
+            });
+            $('#btn2').click(function(){
+                $('#div2').animate({left : '300px', opacity : '0.5' , height : '250px' , width : '250px'});
+            });
+            $(".btn2").click(function(){
+                $("#div2").stop();
+            });
+            $('#btn3').click(function(){
+                $('#div3').animate({left : '300px', height : '+=250px' , width : '+=250px'});
+            });
+            $('.btn3').click(function(){
+                $('#div3').stop();
+            });
+            $('#btn4').click(function(){
+                $('#div4').animate({height : 'toggle'});
+            });
+            $('.btn4').click(function(){
+                $('#div4').stop();
+            });
+            $('#btn5').click(function(){
+                var div = $("#div5");
+                div.animate({height : '300px' , opacity : '0.4'}, "slow");
+                div.animate({width : '300px' , opacity : '0.8'}, "slow");
+                div.animate({height : '100px' , opacity : '0.4'}, "slow");
+                div.animate({width : '100px' , opacity : '0.8'}, "slow");
+            });
+            $('.btn5').click(function(){
+                $('#div5').stop();
+            });
+            $('#btn6').click(function(){
+                var div = $("#div6");
+                div.animate({left: '200px'}, 'slow');
+                div.animate({fontSize: '50px'}, 'slow');
+            });
+            $('.btn6').click(function(){
+                $('#div6').stop();
+            });
+        });
+    </script>
+</body>
+</html>
